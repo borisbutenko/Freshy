@@ -8,16 +8,17 @@ const
 module.exports = function(options) {
     return function() {
         return combiner(
-            gulp.src(options.src, { since: gulp.lastRun('styles') }),
-            _.cached('styles'),
-            _.remember('styles'),
-            _.stylus(),
-            _.autoprefixer(),
-            _.cssnano(),
-            gulp.dest('prod/assets/styles')
+            gulp.src(options.src, { since: gulp.lastRun('pug') }),
+            _.cached('pug'),
+            _.remember('pug'),
+            _.pug({
+                basedir: '../',
+                pretty: true
+            }),
+            gulp.dest('prod/')
         ).on('error', _.notify.onError(function(err) {
             return {
-                title: 'Styles',
+                title: 'Pug',
                 message: err.message
             };
         }));
