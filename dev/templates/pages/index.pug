@@ -1,3 +1,21 @@
 extends ../base
+
+block script
+	+script('./assets/libs/Swiper-3.4.2/dist/js/swiper.min.js', true)
+	+script('index/index.js')
+
+block style
+	+link('./assets/libs/Swiper-3.4.2/dist/css/swiper.min.css', true)
+
 block content
-	| COOLS SUQA
+	section.section.section--slider
+		include ../blocks/__slider
+	section.section.section--about
+		aside.aside.section--about__aside.section--about__aside--left
+			h2.section--about__title O nas
+			hr.section--about__hr
+			p.section--about__par Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie egestas massa, et sollicitudin urna mattis faucibus. Praesent sagittis laoreet est, et efficitur enim lacinia id. Aenean imperdiet diam nec efficitur commodo. Morbi at purus tempus tellus tempus placerat. Sed faucibus sed elit at lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent posuere orci justo, eu fermentum quam cursus quis. Proin consequat molestie magna accumsan placerat. Nulla quis consectetur tortor. Nam viverra consectetur risus iaculis ultrices.
+			address.section--about__address TEL. 500 110 110
+			button.button.section--about__button(type='button') HISTORIA<br>NASZEJ FIRMY
+		aside.aside.section--about__aside.section--about__aside--right
+			span.section--about__span NASZ SKLEP

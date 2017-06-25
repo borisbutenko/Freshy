@@ -1,0 +1,69 @@
+@import '__main.styl'
+@import '__slider.styl'
+
+.section
+  &--slider
+    max-width: 100%;
+    padding: 0 0 6.5rem 0
+
+  &--about
+    display: flex
+    justify-content: center
+    font-family: Montserrat
+
+    &__aside
+      flex: 1 0 50%
+      min-height: 38rem
+
+      &--left
+        padding-right: 10rem
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+      &--right
+        position: relative
+        background: url(../img/about.jpg) no-repeat center
+        background-size: cover
+
+    &__title
+      font-size: 3.5rem
+      text-transform: uppercase
+      margin: 0
+      color: #00a1eb
+      font-weight: bold
+
+    &__hr
+      width: 8.5rem
+      height: .1rem
+      margin: 0
+      border: 0
+      color: #a1a1a1
+      background-color: #a1a1a1
+
+    &__par
+      font-family: Hind
+      color: #737373
+      margin: 0
+      line-height: 2rem
+
+    &__address
+      font-size: 2.2rem
+      margin: 3rem 0
+      font-weight: bold
+      color: #00a1eb
+      font-style: normal
+
+    &__button
+      max-width: 15rem
+      padding: 1.5rem 2rem
+      text-transform: uppercase
+
+    &__span
+      position: absolute
+      bottom: 4rem
+      right: 4rem
+      font-size: 2.2rem
+      color: #fff
+      text-transform: uppercase
+      font-weight: bold

@@ -1,0 +1,9 @@
+nav.nav
+	each name, index in ['HOME', 'O NAS', 'ASORTYMENT', 'WSPÓŁPRACA', 'KONTAKT']
+		li.nav__item
+			- if (index === 0)
+				a.nav__link.nav__link--active(href='#0')=name
+			- else
+				a.nav__link(href='#0')=name
+	li.nav__item
+		a.nav__link.nav__link--address(href='#0') TEL. 500 110 110

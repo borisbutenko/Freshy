@@ -1,0 +1,9 @@
+mixin link(styleName, lib)
+	- lib = lib || false
+	- if (!lib) styleName = 'assets/styles/' + styleName;
+	link(rel='stylesheet' href=styleName)
+
+mixin script(scriptName, lib)
+	- lib = lib || false
+	- if (!lib) scriptName = 'assets/scripts/' + scriptName;
+	script(src=scriptName)

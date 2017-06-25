@@ -9,13 +9,7 @@ module.exports = function(options) {
     return function() {
         return combiner(
             gulp.src(options.src, { since: gulp.lastRun('assets') }),
-            gulp.dest(file => {
-                let path = file.path,
-                    dir = 'prod/assets';
-
-                if (~path.indexOf('font')) return `${dir}/font`;
-                if (~path.indexOf('img')) return `${dir}/img`;
-            })
+            gulp.dest('prod/assets')
         ).on('error', _.notify.onError(function(err) {
             return {
                 title: 'Styles',

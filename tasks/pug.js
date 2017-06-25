@@ -8,9 +8,9 @@ const
 module.exports = function(options) {
     return function() {
         return combiner(
-            gulp.src(options.src, { since: gulp.lastRun('pug') }),
-            _.cached('pug'),
-            _.remember('pug'),
+            gulp.src(options.src/*, { since: gulp.lastRun('scripts') }*/),
+            // _.cached('pug'),
+            // _.remember('pug'),
             _.pug({
                 basedir: '../',
                 pretty: true

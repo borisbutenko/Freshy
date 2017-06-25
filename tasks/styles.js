@@ -8,12 +8,12 @@ const
 module.exports = function(options) {
     return function() {
         return combiner(
-            gulp.src(options.src, { since: gulp.lastRun('styles') }),
-            _.cached('styles'),
-            _.remember('styles'),
-            _.stylus(),
+            gulp.src(options.src/*, { since: gulp.lastRun('scripts') }*/),
+            // _.cached('styles'),
+            // _.remember('styles'),
+            _.stylus({ 'include css': true }),
             _.autoprefixer(),
-            _.cssnano(),
+            // _.cssnano(),
             gulp.dest('prod/assets/styles')
         ).on('error', _.notify.onError(function(err) {
             return {
