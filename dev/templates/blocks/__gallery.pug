@@ -1,0 +1,12 @@
+#gallery.swiper-container.gallery__container
+	.swiper-wrapper.gallery__wrapper
+		- var n = 0;
+		while n < 5
+			- n++;
+			.swiper-slide.gallery__slide
+				p
+					span.gallery__title DORADA ŚWIEŻA
+					span.gallery__price 14,99 ZŁ/KG
+				button.button.gallery__button(type='button') 14,99 ZŁ/KG
+	.swiper-button-next.gallery__next
+	.swiper-button-prev.gallery__prev

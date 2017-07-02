@@ -1,6 +1,4 @@
 @import '__normalize.css'
-@import '@font.styl'
-@import '__header.styl'
 
 *,
 *::before,
@@ -20,6 +18,31 @@ body
   max-width: 128rem
   margin: auto
 
+  &__title
+    font-size: 3.5rem
+    text-transform: uppercase
+    margin: 0
+    color: #00a1eb
+    font-weight: bold
+
+  &__hr
+    height: .1rem
+    margin-top: 4rem
+    margin-bottom: 4rem
+    border: 0
+    color: #a1a1a1
+    background-color: #a1a1a1
+
+    &--white
+      color: #fff
+      background-color: #fff
+
+  &__par
+    font-family: Hind
+    color: #737373
+    margin: 0
+    line-height: 1.5
+
 .button
   border: .1rem solid transparent
   outline: none
@@ -28,6 +51,11 @@ body
   background-color: #00a1eb
   border-radius: .5rem
   cursor: pointer
+  transition: opacity .3s
+
+  &--white
+    color: #00a1eb
+    background-color: #fff
 
   &::-moz-focus-inner
     padding: 0
@@ -35,3 +63,11 @@ body
 
   &:hover
     opacity: .7
+
+.text
+  &--centered
+    text-align: center
+
+@import '@font.styl'
+@import '__header.styl'
+@import '__footer.styl'

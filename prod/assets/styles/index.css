@@ -448,6 +448,75 @@ template {
 [hidden] {
     display: none;
 }
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  min-width: 120rem;
+  font-size: 1.4rem;
+  font-family: Hind;
+}
+.section {
+  padding: 6.5rem 5.5rem;
+  max-width: 128rem;
+  margin: auto;
+}
+.section__title {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  margin: 0;
+  color: #00a1eb;
+  font-weight: bold;
+}
+.section__hr {
+  height: 0.1rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  border: 0;
+  color: #a1a1a1;
+  background-color: #a1a1a1;
+}
+.section__hr--white {
+  color: #fff;
+  background-color: #fff;
+}
+.section__par {
+  font-family: Hind;
+  color: #737373;
+  margin: 0;
+  line-height: 1.5;
+}
+.button {
+  border: 0.1rem solid transparent;
+  outline: none;
+  color: #fff;
+  font-weight: bold;
+  background-color: #00a1eb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.button--white {
+  color: #00a1eb;
+  background-color: #fff;
+}
+.button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.button:hover {
+  opacity: 0.7;
+}
+.text--centered {
+  text-align: center;
+}
 @font-face {
   font-family: 'Hind';
   src: url("../font/Hind/Hind-Regular.ttf") format('truetype');
@@ -529,40 +598,23 @@ template {
 .header__link:hover {
   text-decoration: underline;
 }
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-html {
-  font-size: 62.5%;
-}
-body {
-  min-width: 120rem;
-  font-size: 1.4rem;
-  font-family: Hind;
-}
-.section {
-  padding: 6.5rem 5.5rem;
-  max-width: 128rem;
-  margin: auto;
-}
-.button {
-  border: 0.1rem solid transparent;
-  outline: none;
+.footer {
+  clear: both;
+  height: 12rem;
+  padding: 0 5.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  background: #2b2b2b;
   color: #fff;
-  font-weight: bold;
-  background-color: #00a1eb;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-.button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-.button:hover {
-  opacity: 0.7;
+  font-family: Montserrat;
 }
 .slider {
   font-family: Montserrat;
@@ -605,6 +657,98 @@ body {
   z-index: 1;
   letter-spacing: 0.5rem;
 }
+.gallery {
+  width: 100%;
+  position: relative;
+  margin: 5rem 0;
+}
+.gallery__container {
+  position: static !important;
+  font-family: Montserrat;
+  height: 30rem;
+}
+.gallery__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 27rem;
+  background: url("../img/gallery.png") no-repeat center;
+  font-family: Montserrat;
+  color: #fff;
+  line-height: 1.5;
+}
+.gallery__slide p {
+  margin-top: 4rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: margin-top 0.3s;
+  transition: margin-top 0.3s;
+}
+.gallery__slide:hover p {
+  margin-top: -3rem;
+}
+.gallery__slide:hover p + button {
+  opacity: 1;
+}
+.gallery__slide:hover p + button:hover {
+  opacity: 0.7;
+}
+.gallery__button {
+  padding: 0.7rem;
+  background: #fff;
+  color: #00a1eb;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.gallery__title {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.gallery__price {
+  font-size: 2rem;
+}
+.gallery__next {
+  right: -6.5rem !important;
+  border: 0.1rem solid #007aff;
+  border-radius: 50%;
+  width: 5rem !important;
+  height: 5rem !important;
+  background-size: 15px 25px !important;
+}
+.gallery__prev {
+  left: -6.5rem !important;
+  border: 0.1rem solid #007aff;
+  border-radius: 50%;
+  width: 5rem !important;
+  height: 5rem !important;
+  background-size: 15px 25px !important;
+  background-position-x: 45% !important;
+}
 .section--slider {
   max-width: 100%;
   padding: 0 0 6.5rem 0;
@@ -642,27 +786,6 @@ body {
   background: url("../img/about.jpg") no-repeat center;
   background-size: cover;
 }
-.section--about__title {
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  margin: 0;
-  color: #00a1eb;
-  font-weight: bold;
-}
-.section--about__hr {
-  width: 8.5rem;
-  height: 0.1rem;
-  margin: 0;
-  border: 0;
-  color: #a1a1a1;
-  background-color: #a1a1a1;
-}
-.section--about__par {
-  font-family: Hind;
-  color: #737373;
-  margin: 0;
-  line-height: 2rem;
-}
 .section--about__address {
   font-size: 2.2rem;
   margin: 3rem 0;
@@ -683,4 +806,144 @@ body {
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
+}
+.section--assortment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 6.5rem 0;
+}
+.section--assortment__par {
+  max-width: 63rem;
+}
+.section--assortment__button {
+  max-width: 15rem;
+  padding: 1.5rem 2rem;
+  text-transform: uppercase;
+}
+.section--items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.section--items__item {
+  display: inline-block;
+  text-align: center;
+  margin-right: 3rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 33.3333%;
+          flex: 1 0 33.3333%;
+}
+.section--items__item:last-of-type {
+  margin-right: 0;
+}
+.section--items__img {
+  display: inline-block;
+  width: 17rem;
+  height: 17rem;
+  background-color: #00a1eb;
+  position: relative;
+  border: 0.3rem solid #00a1eb;
+  border-radius: 50%;
+  margin-bottom: 4rem;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.section--items__img:hover {
+  background-color: #fff;
+}
+.section--items__img img {
+  width: 9rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.section--items__button {
+  margin-top: 4rem;
+  padding: 1rem;
+}
+.section--map {
+  min-width: 100%;
+  padding: 0;
+  text-align: right;
+  position: relative;
+  overflow: hidden;
+}
+.section--map__par {
+  max-width: 50%;
+}
+.section--map__par,
+.section--map__title {
+  color: #fff;
+}
+.section--map .map {
+  height: 50rem;
+}
+.section--map .map__contact {
+  position: absolute;
+  padding-right: 4rem;
+  padding-top: 7rem;
+  top: 0;
+  right: 0;
+  color: #fff;
+  background-image: linear-gradient(105deg, transparent 10%, #00a1eb);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+}
+.section--map__button {
+  margin-top: 4rem;
+  padding: 1rem;
+}
+.section--footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.section--footer__title {
+  text-transform: uppercase;
+  font-family: Montserrat;
+  font-size: 2.2rem;
+  color: #808080;
+}
+.section--footer__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 25%;
+          flex: 1 0 25%;
+}
+.section--footer__item ul {
+  font-family: Hind;
+  padding: 0;
+  padding-right: 2rem;
+  margin: 0;
+  list-style: none;
+}
+.section--footer__item ul li {
+  line-height: 1.8;
+}
+.section--footer__item ul li a {
+  color: #808080;
+  text-decoration: none;
 }

@@ -1,0 +1,70 @@
+.gallery
+  width: 100%
+  position: relative
+  margin: 5rem 0
+
+  &__container
+    position: static !important
+    font-family: Montserrat
+    height: 30rem
+
+  &__slide
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 27rem
+    background: url(../img/gallery.png) no-repeat center
+    font-family: Montserrat
+    color: #fff
+    line-height: 1.5
+
+    & p
+      margin-top: 4rem
+      position: relative
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      transition: margin-top .3s
+
+    &:hover
+      & p
+        margin-top: -3rem
+        & + button
+          opacity: 1
+          &:hover
+            opacity: .7
+
+  &__button
+    padding: .7rem
+    background: #fff
+    color: #00a1eb
+    opacity: 0
+    transition: opacity .3s
+
+  &__title
+    padding: 0
+    margin: 0
+    font-weight: bold
+    font-size: 2rem
+
+  &__price
+    font-size: 2rem
+
+  &__next
+    right: -6.5rem !important
+    border: .1rem solid #007aff
+    border-radius: 50%
+    width: 5rem !important
+    height: 5rem !important
+    background-size: 15px 25px !important
+
+  &__prev
+    left: -6.5rem !important
+    border: .1rem solid #007aff
+    border-radius: 50%
+    width: 5rem !important
+    height: 5rem !important
+    background-size: 15px 25px !important
+    background-position-x: 45% !important

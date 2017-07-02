@@ -10,12 +10,49 @@ block style
 block content
 	section.section.section--slider
 		include ../blocks/__slider
+
 	section.section.section--about
 		aside.aside.section--about__aside.section--about__aside--left
-			h2.section--about__title O nas
-			hr.section--about__hr
-			p.section--about__par Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie egestas massa, et sollicitudin urna mattis faucibus. Praesent sagittis laoreet est, et efficitur enim lacinia id. Aenean imperdiet diam nec efficitur commodo. Morbi at purus tempus tellus tempus placerat. Sed faucibus sed elit at lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent posuere orci justo, eu fermentum quam cursus quis. Proin consequat molestie magna accumsan placerat. Nulla quis consectetur tortor. Nam viverra consectetur risus iaculis ultrices.
+			h2.section__title O nas
+			hr.section__hr(align='left' width='80px')
+			p.section__par Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie egestas massa, et sollicitudin urna mattis faucibus. Praesent sagittis laoreet est, et efficitur enim lacinia id. Aenean imperdiet diam nec efficitur commodo. Morbi at purus tempus tellus tempus placerat. Sed faucibus sed elit at lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent posuere orci justo, eu fermentum quam cursus quis. Proin consequat molestie magna accumsan placerat. Nulla quis consectetur tortor. Nam viverra consectetur risus iaculis ultrices.
 			address.section--about__address TEL. 500 110 110
 			button.button.section--about__button(type='button') HISTORIA<br>NASZEJ FIRMY
 		aside.aside.section--about__aside.section--about__aside--right
 			span.section--about__span NASZ SKLEP
+
+	section.section.section--assortment
+		h2.section__title.text.text--centered ASORTYMENT
+		hr.section__hr.text.text--centered(align='center' width='80px')
+		p.section__par.section--assortment__par.text.text--centered Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie egestas massa, et sollicitudin urna mattis faucibus. Praesent sagittis laoreet est, et efficitur enim lacinia id. Aenean imperdiet diam nec efficitur commodo. Morbi at purus tempus tellus tempus placerat. Sed faucibus sed elit at lacinia.
+		.gallery
+			include ../blocks/__gallery
+		button.button.section--assortment__button(type='button') HISTORIA<br>NASZEJ FIRMY
+
+	section.section.section--items
+		- var n = 0;
+			while n < 3
+				- n++
+				.section--items__item
+					.section--items__img
+						img(src='./assets/img/item.png' alt='item.png')
+					h2.section__title.text.text--centered CATERING
+					hr.section__hr(align='center' width='80px')
+					p.section__par.section--items__par.text.text--centered Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie egestas massa, et sollicitudin urna mattis faucibus. Praesent sagittis laoreet est, et efficitur enim lacinia id.
+					button.button.section--items__button(type='button') HISTORIA<br>NASZEJ FIRMY
+
+	section.section.section--map
+		include ../blocks/__map
+
+	section.section.section--footer
+		- var n = 0;
+			while n < 4
+				- n++
+				.section--footer__item
+					h4.section--footer__title Title
+					ul
+						- var i = 0;
+							while i < 4
+								- i++
+								li
+									a(href='#0') Item
